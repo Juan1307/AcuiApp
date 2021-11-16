@@ -6,10 +6,10 @@ export default {
     WindiCSS(),
     checker({
       typescript: true,
-      eslint: {
-        files: ['./src'],
-        extensions: ['.ts'],
-      },
+      // eslint: {
+      //   files: ['./src'],
+      //   extensions: ['.ts'],
+      // },
     }),
   ],
   server: {
