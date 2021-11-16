@@ -23,7 +23,7 @@ export default class Player {
       spriteWidth: number;
       spriteHeight: number;
 
-      constructor (mouse: State, context: any, cw: number, ch:number) {
+      constructor (mouse: State, context: CanvasRenderingContext2D, cw: number, ch:number) {
          // init player context canvas
          this.mouse = mouse;
          this.ctx = context;

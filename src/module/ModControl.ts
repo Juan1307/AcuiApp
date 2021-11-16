@@ -175,8 +175,10 @@ export default class NavBar {
             <button class="btn__box btn__anim btn-outline-yellow w-9/12" id="init-game-play">
               <i class='bx bx-sm bx-right-arrow mr-2'></i> Jugar
             </button>
-            <button class="btn__box btn__anim btn-outline-yellow w-3/12"><i class='bx bx-sm bx-heart' ></i>
-            </button>
+            <a href="https://www.paypal.com/donate/?hosted_button_id=U36PRU2NDT82W" target="_blank" 
+              class="rounded-md border-2 btn__box btn__anim btn-outline-yellow w-3/12">
+              <i class='bx bx-sm bx-heart' ></i>
+            </a>
          </div>
       </div>`);
 
@@ -239,8 +241,10 @@ export default class NavBar {
             <button class="btn__box btn__anim btn-outline-yellow w-6/12" id="reset-game-over">
               <i class='bx bx-sm bx-revision'></i>
             </button>
-            <button class="btn__box btn__anim btn-outline-yellow w-6/12"><i class='bx bx-sm bx-heart' ></i>
-            </button>
+            <a href="https://www.paypal.com/donate/?hosted_button_id=U36PRU2NDT82W" target="_blank" 
+            class="rounded-md border-2 btn__box btn__anim btn-outline-yellow w-6/12">
+              <i class='bx bx-sm bx-heart' ></i>
+            </a>
           </div>
         </div>`);
    }

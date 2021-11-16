@@ -7,7 +7,6 @@ export default class Game {
    ctx: CanvasRenderingContext2D;
    width: number;
    height: number;
-   lost:Boolean = false;
 
    // instances
    player: Player;
@@ -16,15 +15,15 @@ export default class Game {
    ballsArray: Ball[] = [];
    levelArray_0: number[][] = [[10, 1],[15, 3],[20, 6],[25, 10]];
    levelArray_1: number[][] = [[30, 1],[25, 2],[20, 3],[15, 4]];
-   index: number = 0;
+   index = 0;
 
    // states
-   score: number = 0;
-   ballscore: number = 5;
-   alga: number = 0;
-   nick: string = '';
-   anim: number = 0;
-   sanim: number = 0;
+   score = 0;
+   ballscore = 5;
+   alga = 0;
+   nick = '';
+   anim = 0;
+   sanim = 0;
 
    constructor(player: Player, context: CanvasRenderingContext2D,  width: number, height: number){
       
@@ -35,8 +34,6 @@ export default class Game {
    }
 
    handleBubble(gameFrame: number): void {
-      this.anim ++;
-      if(this.anim % 10 === 0) this.sanim += 1;
 
       // levels 
       if (this.score > 60 && this.score < 90) {

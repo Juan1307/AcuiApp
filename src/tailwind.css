@@ -40,7 +40,7 @@
 
   canvas{
     @apply border rounded-md  ;
-    background-image: url('./imgs/static/back_drop_game.jpg');
+    background-image: url('src/imgs/static/back_drop_game.jpg');
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;    

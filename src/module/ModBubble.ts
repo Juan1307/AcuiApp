@@ -17,7 +17,7 @@ export default class Bubble {
       spriteWidth: number;
       spriteHeight: number;
 
-      constructor (player: any, context: any, cw: number, ch: number, levelSpeed: number) {
+      constructor (player: any, context: CanvasRenderingContext2D, cw: number, ch: number, levelSpeed: number) {
          this.distance = 0;
          // init bubble
          this.player = player;
