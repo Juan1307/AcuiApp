@@ -1,0 +1,258 @@
+/* base style game */
+
+:root {
+  /* config colors */
+  --shadow-primary: 1px 18px 61px -7px rgba(255,179,0,1);
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Patrick Hand', cursive;
+    font-weight: 400;
+    url: url(/fonts/PatrickHand-Regular.ttf) format("ttf");
+  }
+
+  body{
+    position: relative;
+    height: 100vh;
+  }
+
+  header {
+    @apply m-auto sm:mx-10 mx-2 mb-1;
+  }
+
+  nav{
+    box-shadow: 1px 18px 61px -7px rgba(255,179,0,0.5);
+    @apply py-4 px-3 flex justify-between items-cente;
+  }
+
+  button, input{
+    @apply rounded-md border-2;
+  }
+
+  input, button:focus{
+    outline: none;
+  }
+
+  img{
+    display: inline !important;
+  }
+
+  canvas{
+    @apply border rounded-md  ;
+    background-image: url('./imgs/static/back_drop_game.jpg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;    
+  }
+}
+
+@layer components {
+  .bx-border{
+    @apply border-2;
+  }
+  
+  .game__canvas{
+    @apply flex justify-center m-auto items-center relative;
+  }
+
+  .pointer{
+    cursor: pointer;
+  }
+
+  .btn__anim {
+    @apply transition transform hover:scale-105;
+  }
+
+  .btn-outline-yellow{
+    @apply bg-yellow-500 border-yellow-500 text-white
+    hover:bg-yellow-600;
+  }
+
+  .link__item{
+    cursor: pointer;
+    @apply rounded-md px-3 py-1 mx-2
+    bg-yellow-500 
+    hover:bg-yellow-600 text-white; 
+  }
+
+  .link__item.active{
+    @apply bg-yellow-600 ring ring-yellow-700 ring-offset-0; 
+  }
+
+  .link__item > a  .bx {
+    @apply m-0.5;
+  }
+  
+  .link__item > a {
+    @apply flex justify-between items-center;
+  }
+
+  /* box game */
+  .box__game{
+    @apply hidden 
+    transition duration-500 ease-in-out bg-opacity-0;
+  }
+    
+  .box__game.active{
+    @apply flex inset-0 w-full h-full 
+     justify-center items-center bg-yellow-400 bg-opacity-40;
+  }
+
+  .box__game--item{
+    box-shadow: var(--shadow-primary);
+    @apply w-70 p-4 flex flex-col space-y-4
+    rounded-md bg-yellow-300;
+  }
+
+  .box__game--animate{
+    @apply opacity-0;
+    @apply transform -translate-y-1/3;
+    @apply transition duration-500 ease-in-out;
+  }
+
+  .box__game--collection.active, 
+  .box__game--item.active {
+    @apply opacity-100 transform translate-y-0;
+  }
+
+  .form__game{
+    @apply flex flex-col space-y-2;
+  }
+
+  .input__text{
+    @apply flex p-2 text-center text-yellow-700
+    rounded border-yellow-500
+    transition focus:bg-yellow-100;
+  }
+
+  .input__text::placeholder{
+    @apply text-yellow-400;
+  }
+
+  .input__text:focus::placeholder{
+    @apply text-yellow-500;
+  }
+
+  .btn__box{
+    @apply py-2 flex justify-center items-center;
+  }
+
+  /* box collection */
+
+  .box__game--collection{
+    width: 22rem;
+    box-shadow: var(--shadow-primary);
+    @apply p-4 flex flex-col space-y-4 mx-3 sm:mx-0
+    rounded-md bg-yellow-300;
+  }
+
+  @media only screen and (min-width: 375px) {
+    .box__game--collection{
+      width: 28rem;
+    }
+  }
+  
+  @media only screen and (min-width: 640px ){
+    .box__game--collection{
+      width: 32rem;
+    }
+  }
+
+  .box__item__group {
+    @apply mb-2 grid grid-cols-2 sm:grid-cols-3 gap-2 items-center relative;
+  }
+
+  .box__item {
+    @apply p-0 rounded-md z-10 cursor-pointer
+    text-center border border-yellow-700 ;
+    @apply transition hover:bg-yellow-200;
+
+  }
+
+  .box__item.active {
+    @apply border-2;
+  }
+
+  .box__item.active .item__name{
+    @apply border-2 border-b-0;
+  }
+
+  .item__name {
+    @apply absolute -inset-x-0 bottom-0
+     w-20 sm:w-25 m-auto p-1 
+     rounded-t-md bg-yellow-500 bg-opacity-80 border border-yellow-700
+     border-b-0 text-white font-bold tracking-wider;
+    @apply text-xs sm:text-sm; 
+
+  }
+
+  /* box score */
+  .box__score{
+    @apply absolute bottom-0 inset-x-0 ml-8 sm:ml-0 flex justify-center;
+  }
+  
+  .box__score--item{
+    @apply relative flex justify-around space-x-4 
+      pt-13 pb-3 px-3 
+      sm:pb-7 sm:px-7 sm:pt-15 
+    rounded-t-md
+    bg-yellow-300;
+  }
+
+  .score__item{
+    @apply relative px-3 py-1 
+    bg-yellow-500 rounded-md 
+    border-2 border-yellow-600;
+  }  
+
+  .score__item--title{
+    @apply absolute left-0 -top-9 right-0 flex justify-center;
+  }
+
+  .score__item--title > span {
+    @apply text-md p-1 text-yellow-700 
+    border-2 border-yellow-600 rounded-t-md;
+  }
+
+  .box__score--bonus{
+    @apply absolute top-1 md:top-2  sm:top-4 -left-15 flex flex-col space-y-1 
+    text-2xl text-white;
+    
+  }
+
+  .score__bonus{
+    @apply bg-yellow-500 rounded-l-md py-2 px-2.5 z-20 relative
+    ;
+  }
+
+  .charger__score{
+    @apply absolute top-3 w-6 text-center -left-6 p-1 bg-yellow-300 rounded text-xs text-yellow-700 font-bold;
+  }
+
+  /* ranking */
+  .group__ranking{
+    @apply space-y-2;
+  }
+
+  .item__ranking{
+    @apply grid grid-cols-8 p-2 bg-yellow-500 border-3 border-yellow-700 rounded-md text-white;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
