@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/fish_blue.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="autor" content="Antik">
+    <meta name="description" content="Game Acui, Fish Game, Juego Pez, Juego Tilapia">
+    <meta name="robots" content="index,follow">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>Acui</title>
+    <script type="module" crossorigin src="/assets/index.bccdd3a8.js"></script>
+    <link rel="stylesheet" href="/assets/index.c302f73c.css">
+  </head>
+  <body class="bg-gradient-to-r from-yellow-500 via-yellow-700 to-yellow-800">
+
+    <!-- NAVBAR GAME -->
+    <header>
+      <nav class="rounded-b-md bg-yellow-300">
+        <ul class="flex">
+          <li class="link__item btn__anim group">
+            <a><i class='bx bx-dialpad-alt'></i> 
+              <span class="sm:block hidden">
+                Controles
+              </span>
+            </a>
+          </li>
+          <li class="link__item btn__anim group">
+            <a><i class='bx bx-box' ></i>
+              <span class="sm:block hidden">
+               Coleccion
+              </span>
+            </a>
+          </li>
+        </ul>
+        <div class="logo flex relative">
+          <div class="absolute -left-5 w-15">
+            <img src="/assets/logo_orange.77c4d914.png" alt="logo">
+          </div>
+        </div>
+        <ul class="flex">
+          <li class="link__item btn__anim group">
+            <a><i class='bx bx-award '></i>
+              <span class="sm:block hidden">
+                Ranking
+              </span>
+            </a>
+          </li>
+          <li class="link__item btn__anim group">
+            <a><i class='bx bx-info-circle'></i>
+              <span class="sm:block hidden">
+                Info
+              </span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- BOX GAME -->
+    <div class="game__canvas">
+      <canvas id="canvas"></canvas>
+    </div>
+
+    <!-- MODAL GAME -->
+    <div class="box__game" id="modal-game">
+    </div>
+
+    <!-- BOX SCORE -->
+    <footer class="box__score">
+      <div class="box__score--item">
+        <div class="score__item w-30 sm:w-40  flex items-center justify-center">
+          <div class="score__item--title">
+            <span>Puntaje</span>
+          </div>
+          <div class="text-2xl sm:text-3xl text-white pr-1">
+            <i class='bx bx-chevron-up'></i>  
+          </div>
+          <h1 class="text-2xl sm:text-3xl text-white" id="score"></h1>
+        </div>
+        <div class="score__item w-20 sm:w-30">
+          <div class="score__item--title">
+            <span>Nivel</span>
+          </div>
+          <h1 class="text-sm sm:text-xl text-center mt-2 sm:mt-1 text-white" id="level"></h1>
+        </div>
+        <div class="box__score--bonus">
+          <div class="score__bonus">
+            <i class='bx bx-spa'></i>
+            <div class="charger__score">
+              <p id="alga">0</p>
+            </div>
+          </div>
+          <div class="score__bonus">
+            <i class='bx bx-heart-circle'></i>
+            <div class="charger__score">
+              <p id="dead">0</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    
+  </body>
+</html>
